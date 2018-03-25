@@ -9,6 +9,8 @@
 *.userosscache
 *.sln.docstates
 
+secrets.py
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -286,3 +288,4 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+

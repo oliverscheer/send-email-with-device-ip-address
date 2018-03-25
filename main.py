@@ -4,9 +4,15 @@ import socket
 import smtplib
 import os
 
-sender = "<sender email address here>"
-sender_pwd = "<sender passwort here>"
-recipient = "<recipient address here>"
+# Create a secrets.py file and place the following variables 
+# sender_address = "<sender email address here>"
+# sender_password = "<sender passwort here>"
+# recipient_address = "<recipient address here>"
+
+from secrets import sender_address
+from secrets import sender_password
+from secrets import recipient_address 
+
 
 def get_device_ip_address():
     # On Windows
@@ -26,13 +32,13 @@ def get_device_ip_address():
 
 def send_email(text):
     try:
-        message = "\"From: " + sender + "\nTo: " + recipient + "\nSubject: Device Information\n\n" + text + "\""
+        message = "\"From: " + sender_address + "\nTo: " + recipient_address + "\nSubject: Device Information\n\n" + text + "\""
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
-        server.login(sender, sender_pwd)
-        server.sendmail(sender, recipient, message)
+        server.login(sender_address, sender_password)
+        server.sendmail(sender_address, recipient_address, message)
         server.close()
         print("Message sent:\n", message)
 
