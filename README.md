@@ -34,7 +34,6 @@ Use crontab to schedule script every hour and on reboot
 
 Use The '&' for running in background
 
-@reboot python /home/pi/apps/send-email-with-device-ip-address/main.py & 
 0 * * * * python /home/pi/apps/send-email-with-device-ip-address/main.py & 
 
 To execute the script on every reboot:

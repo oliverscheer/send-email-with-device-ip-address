@@ -5,18 +5,19 @@ import smtplib
 import os
 import sys
 
-# Create a secrets.py file and place the following variables 
-# sender_address = "<sender email address here>"
-# sender_password = "<sender passwort here>"
-# sender_server = 'smtp.gmail.com'
-# sender_port = 587
-# recipient_address = "<recipient address here>"
-
+# Import secret informations from file 'secrets.py'
 from secrets import sender_address
 from secrets import sender_password
 from secrets import sender_server
 from secrets import sender_port
 from secrets import recipient_address 
+
+# or uncomment the following lines and set secret values here
+# sender_address = "<sender email address here>"
+# sender_password = "<sender passwort here>"
+# sender_server = 'smtp.gmail.com'
+# sender_port = 587
+# recipient_address = "<recipient address here>"
 
 def get_device_ip_address():
 
